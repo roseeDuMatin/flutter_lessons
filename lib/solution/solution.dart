@@ -20,78 +20,58 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class Home extends StatefulWidget {
-  final List<Widget> screens = [
-    Favorites(),
-    Calendar(),
-  ];
-
-  @override
-  _HomeState createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  int _selectedScreenIndex = 0;
-
-  void _onTabTapped(int index) {
-    setState(() {
-      _selectedScreenIndex = index;
-    });
-  }
-
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: widget.screens[_selectedScreenIndex],
-      appBar: AppBar(
-        leading: Icon(Icons.airplanemode_active),
-        title: Text("My Title"),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {
-          print("ok");
-        },
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: _onTabTapped,
-        currentIndex: _selectedScreenIndex,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            title: Text("Favorites"),
+    return Column(
+      children: <Widget>[
+        Expanded(
+          child: Column(
+            children: <Widget>[
+              Expanded(
+                flex: 2,
+                child: Container(
+                  color: Colors.pink,
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  color: Colors.orange,
+                ),
+              ),
+            ],
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today),
-            title: Text("today"),
+        ),
+        Expanded(
+          child: Stack(
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Container(
+                      color: Colors.amber,
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      color: Colors.lightBlue,
+                    ),
+                  ),
+                ],
+              ),
+              Positioned.fill(
+                child: Center(
+                  child: Container(
+                    height: 50,
+                    width: 50,
+                    color: Colors.red,
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
-    );
-  }
-}
-
-class Favorites extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.amber,
-      child: Center(
-        child: Text("Favorites screen"),
-      ),
-    );
-  }
-}
-
-class Calendar extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.pink,
-      child: Center(
-        child: Text("Calendar screen"),
-      ),
+        ),
+      ],
     );
   }
 }

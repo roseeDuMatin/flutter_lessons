@@ -1,12 +1,14 @@
 # Flutter Lessons
 
-## Lesson 2 : Learning about StatefulWidget
+## Lesson 4 : Learning about Layouts
 
 In this lesson we are going to speak about:
-* StatefulWidget
-* State handling
-* Using BottomNavigationBar with state
+* Row
+* Column
+* Stack
+* Expanded
+* MediaQuery
 
 ## Expected result
 
-<img src="https://raw.githubusercontent.com/ThomasEcalle/flutter_lessons/3-stateful/readme_resources/solution.gif" width="140" height="280" hspace="20"/>
+<img src="https://raw.githubusercontent.com/ThomasEcalle/flutter_lessons/4-layouts/readme_resources/solution.png" width="140" height="280" hspace="20"/>
