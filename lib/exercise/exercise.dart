@@ -1,12 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Learn how to run use a Scaffold widget
-/// In this lesson we are going to speak about:
-/// * Scaffold
-/// * BottomNavigationBar
-/// * FloatingActionButton
-/// * AppBAr
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -30,13 +23,35 @@ class MyApp extends StatelessWidget {
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: Center(
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Center(
         child: Text(
           "Hello",
           style: Theme.of(context).textTheme.title,
         ),
+      ),
+      appBar: AppBar(
+        leading: Icon(Icons.airplanemode_active),
+        title: Text("My Title"),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          print("ok");
+        },
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            title: Text("Favorites"),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calendar_today),
+            title: Text("today"),
+          ),
+        ],
       ),
     );
   }

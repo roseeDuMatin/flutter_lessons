@@ -1,12 +1,11 @@
 # Flutter Lessons
 
-## Lesson 2 : Learning about Scaffold widget
+## Lesson 2 : Learning about StatefulWidget
 
 In this lesson we are going to speak about:
-* Scaffold
-* BottomNavigationBar
-* FloatingActionButton
-* AppBAr
+* StatefulWidget
+* State handling
+* Using BottomNavigationBar with state
 
 ## Expected result
 
