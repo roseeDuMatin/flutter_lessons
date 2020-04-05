@@ -1,6 +1,6 @@
 # Flutter Lessons
 
-## Exercise 1 : Our first application and the MaterialApp widget
+## Lesson 1 : Our first application and the MaterialApp widget
 
 In this lesson we are going to speak about:
 * runApp method
@@ -12,4 +12,4 @@ In this lesson we are going to speak about:
 
 ## Expected result
 
-<img src="https://raw.githubusercontent.com/ThomasEcalle/flutter_lessons/1-material-app/readme_resources/lesson_1_solution.png" width="140" height="280" hspace="20"/>
+<img src="https://raw.githubusercontent.com/ThomasEcalle/flutter_lessons/1-material-app/readme_resources/solution.png" width="140" height="280" hspace="20"/>
