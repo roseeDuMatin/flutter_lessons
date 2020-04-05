@@ -1,15 +1,13 @@
 # Flutter Lessons
 
-## Exercise 1 : Our first application and the MaterialApp widget
+## Lesson 2 : Learning about Scaffold widget
 
 In this lesson we are going to speak about:
-* runApp method
-* StatelessWidget
-* Container
-* MaterialApp
-* InheritedWidget
-* Theme
+* Scaffold
+* BottomNavigationBar
+* FloatingActionButton
+* AppBAr
 
 ## Expected result
 
-<img src="https://raw.githubusercontent.com/ThomasEcalle/flutter_lessons/1-material-app/readme_resources/lesson_1_solution.png" width="140" height="280" hspace="20"/>
+<img src="https://raw.githubusercontent.com/ThomasEcalle/flutter_lessons/2-scaffold/readme_resources/solution.png" width="140" height="280" hspace="20"/>
