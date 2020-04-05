@@ -9,3 +9,7 @@ In this lesson we are going to speak about:
 * MaterialApp
 * InheritedWidget
 * Theme
+
+## Expected result
+
+<img src="https://raw.githubusercontent.com/ThomasEcalle/flutter_lessons/1-material-app/readme_resources/lesson_1_solution.png" width="140" height="280" hspace="20"/>
