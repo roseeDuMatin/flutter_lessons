@@ -1,6 +1,6 @@
 # Flutter Lessons
 
-## Lesson 2 : Learning about StatefulWidget
+## Lesson 3 : Learning about StatefulWidget
 
 In this lesson we are going to speak about:
 * StatefulWidget
