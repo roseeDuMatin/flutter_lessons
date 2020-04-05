@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutterlessons/solution/user.dart';
+import 'package:flutterlessons/solution/user_item.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,57 +23,25 @@ class MyApp extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
+  final List<User> _users = List.generate(100, (int index) {
+    return User(
+      "Last Name $index",
+      "First Name $index",
+      "$index, rue du faubourg saint antoine",
+    );
+  });
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Expanded(
-          child: Column(
-            children: <Widget>[
-              Expanded(
-                flex: 2,
-                child: Container(
-                  color: Colors.pink,
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  color: Colors.orange,
-                ),
-              ),
-            ],
-          ),
+    return Scaffold(
+      body: SafeArea(
+        child: ListView.builder(
+          itemCount: _users.length,
+          itemBuilder: (BuildContext context, int index) {
+            return UserItem(user: _users[index],);
+          },
         ),
-        Expanded(
-          child: Stack(
-            children: <Widget>[
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Container(
-                      color: Colors.amber,
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      color: Colors.lightBlue,
-                    ),
-                  ),
-                ],
-              ),
-              Positioned.fill(
-                child: Center(
-                  child: Container(
-                    height: 50,
-                    width: 50,
-                    color: Colors.red,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
+      ),
     );
   }
 }
