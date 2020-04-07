@@ -1,15 +1,13 @@
 # Flutter Lessons
 
-## Lesson 5 : Learning about Lists
+## Lesson 6 : Web Services
 
 In this lesson we are going to speak about:
-* Columns
-* SingleChildScrollView
-* ListView
-* ListView.builder()
-* List.generate()
-* ListTile
+* Making http calls
+* Understanding Futures
+* Handling calls in state
+* Handling calls with FutureBuilder widget
 
 ## Expected result
 
-<img src="https://raw.githubusercontent.com/ThomasEcalle/flutter_lessons/5-lists/readme_resources/solution.png" width="140" height="280" hspace="20"/>
+<img src="https://raw.githubusercontent.com/ThomasEcalle/flutter_lessons/6-webservices/readme_resources/solution.png" width="140" height="280" hspace="20"/>
