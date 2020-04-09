@@ -1,17 +1,13 @@
 # Flutter Lessons
 
-## Lesson 6 : Web Services
+## Lesson 7 : Navigation
 
 In this lesson we are going to speak about:
-* Making http calls
-* Understanding Futures
-* Handling calls in state
-* Handling calls with FutureBuilder widget
-
-Users will be fetched using this webservice:
-
-```https://next.json-generator.com/api/json/get/NyC4XoSvu?delay=2000```
+* Opening a new screen
+* Named routes
+* Passing parameters to named routes
+* Handling a 404 route
 
 ## Expected result
 
-<img src="https://raw.githubusercontent.com/ThomasEcalle/flutter_lessons/6-webservices/readme_resources/solution.png" width="140" height="280" hspace="20"/>
+<img src="https://raw.githubusercontent.com/ThomasEcalle/flutter_lessons/7-navigation/readme_resources/solution.gif" width="140" height="280" hspace="20"/>

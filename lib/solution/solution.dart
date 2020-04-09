@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutterlessons/solution/api_services.dart';
-import 'package:flutterlessons/solution/user.dart';
-import 'package:flutterlessons/solution/user_item.dart';
+import 'package:flutterlessons/solution/screen_404.dart';
+import 'package:flutterlessons/solution/screen_b.dart';
+import 'package:flutterlessons/solution/screen_c.dart';
+
+import 'home.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,59 +20,29 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: Home(),
-    );
-  }
-}
-
-class Home extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: FutureBuilder(
-          future: ApiServices.getUsers(),
-          builder: (BuildContext context, AsyncSnapshot snapshot) {
-            switch (snapshot.connectionState) {
-              case ConnectionState.waiting:
-                return Center(
-                  child: CircularProgressIndicator(),
-                );
-                break;
-              case ConnectionState.done:
-                if (snapshot.hasError) {
-                  return Center(
-                    child: Text("Error: ${snapshot.error}"),
-                  );
-                }
-                if (snapshot.hasData) {
-                  final List<User> users = snapshot.data;
-                  if (users.isEmpty) {
-                    return Center(
-                      child: Text("Empty list"),
-                    );
-                  }
-                  return ListView.builder(
-                    itemCount: users.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return UserItem(
-                        user: users[index],
-                      );
-                    },
-                  );
-                } else {
-                  return Center(
-                    child: Text("No data"),
-                  );
-                }
-                break;
-              default:
-                return Container();
-                break;
+      routes: {
+        "/": (BuildContext context) => Home(),
+        ScreenB.routeName: (BuildContext context) => ScreenB(),
+      },
+      onGenerateRoute: (RouteSettings settings) {
+        final dynamic arguments = settings.arguments;
+        switch (settings.name) {
+          case ScreenC.routeName:
+            int identifier;
+            if (arguments is int) {
+              identifier = arguments;
             }
-          },
-        ),
-      ),
+            return MaterialPageRoute(
+              builder: (BuildContext context) => ScreenC(
+                identifier: identifier,
+              ),
+            );
+            break;
+          default:
+            return MaterialPageRoute(builder: (BuildContext context) => Screen404());
+            break;
+        }
+      },
     );
   }
 }
