@@ -20,17 +20,40 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class Home extends StatelessWidget {
+
+
+
+class Home extends StatefulWidget {
+  // Mettre les immutables dans stateful
+  final List<Widget> _screens = [
+    ScreenA(),
+    ScreenB(),
+  ];
+
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int _currentIndex = 0;
+
+  // Getter : fonction à laqulele on fait appel comme un champ
+  List<Widget> get screens => widget._screens;
+
+  void _changedIndex(int newIndex){
+    if(_currentIndex != newIndex){
+      setState((){
+        _currentIndex = newIndex;
+      });
+    }
+    print("Clicked index = $_currentIndex");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Center(
-        child: Text(
-          "Hello",
-          style: Theme.of(context).textTheme.title,
-        ),
-      ),
+      body: screens[_currentIndex],
       appBar: AppBar(
         leading: Icon(Icons.airplanemode_active),
         title: Text("My Title"),
@@ -39,9 +62,11 @@ class Home extends StatelessWidget {
         child: Icon(Icons.add),
         onPressed: () {
           print("ok");
-        },
+  },
       ),
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex, // index sélectionné dans la liste des onglets
+        onTap: _changedIndex,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
@@ -53,6 +78,31 @@ class Home extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+
+class ScreenA extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.amber,
+      child: Center(
+        child : Text("Screen A"),
+      )
+    );
+  }
+}
+
+class ScreenB extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.pink,
+      child: Center(
+        child: Text("Screen B"),
+      )
     );
   }
 }
